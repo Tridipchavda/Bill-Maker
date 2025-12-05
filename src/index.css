@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.preview-wrapper {
+  background: white;
+  width: 894px;             /* A4 width in pixels */
+  height: auto;       /* A4 height */
+  padding: 18px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.35);
+}
+
+
+@media screen and (max-width: 768px) {
+  body {
+    background: #dcdcdc; /* grey like PDF preview background */
+  }
+
+  .preview-wrapper {
+    transform: scale(0.88);
+    transform-origin: top center;
+  }
+
+  .invoice-container {
+    background: white;
+    margin: 0 auto;
+    transform: scale(0.75);    /* zoom out for phone */
+    transform-origin: top center;
+    box-shadow: 0 0 6px rgba(0,0,0,0.4);
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .preview-wrapper {
+    width: auto;
+    height: 900px;
+    transform: scale(0.55);
+    transform-origin: top center;
+  }
+
+  .invoice-container {
+    width: 500px;
+    height: auto;
+    transform-origin: top center;
+  }
+}
+
+
+/* ------------ PERFECT PDF PRINT LAYOUT ---------------- */
+@media print {
+  @page {
+    size: A4;               /* force A4 */
+    margin: 10mm;           /* no auto zoom / no white gaps */
+  }
+
+  body {
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    zoom: 100% !important;     /* stop browser auto resizing */
+  }
+
+  .invoice-container {
+    width: 100% !important;
+    max-width: 800px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+
+    /* REMOVE scaling from mobile preview */
+    transform: none !important;
+    scale: 1 !important;
+
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* remove print button */
+  button, .print-btn {
+    display: none !important;
+  }
+}
