@@ -58,7 +58,7 @@ export const InvoicePage = forwardRef(({ bill }, ref) => {
   return (
     <div
       ref={ref}
-      className="invoice-container flex flex-col justify-between bg-white border border-black p-4 text-[12px]"
+      className="invoice-container flex flex-col justify-between bg-white border p-4 border-black text-[12px]"
       style={{
         width: "210mm",
         minHeight: "297mm",
@@ -84,7 +84,7 @@ export const InvoicePage = forwardRef(({ bill }, ref) => {
               width: 210mm !important;
               min-height: 297mm !important;
               margin: 0 !important;
-              padding: 18px !important;
+              padding: 25px !important;
               box-sizing: border-box;
             }
           }
@@ -227,11 +227,8 @@ export const InvoicePage = forwardRef(({ bill }, ref) => {
 
       {/* BANK + TERMS + SIGNATURE */}
       <div className="grid grid-cols-3 border border-black text-[12px]">
-        <div className="p-2 space-y-1 border-r border-black">
-          <p className="font-bold underline">Bank Details</p>
-          <p>
-            <b>Name:</b> {Bank.holerName}
-          </p>
+        <div className="p-2 border-r border-black">
+          <p className="pb-2 font-bold underline">Bank Details</p>
           <p>
             <b>IFSC:</b> {Bank.IFSC}
           </p>
@@ -239,7 +236,10 @@ export const InvoicePage = forwardRef(({ bill }, ref) => {
             <b>Account No:</b> {Bank.accountNo}
           </p>
           <p>
-            <b>Bank:</b> {Bank.bankName}
+            <b>Bank:</b> {Bank.name}
+          </p>
+          <p>
+            <b>Branch:</b> {Bank.branch}
           </p>
         </div>
 

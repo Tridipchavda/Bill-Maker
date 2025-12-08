@@ -26,7 +26,7 @@ export default function InvoicePreview() {
         .invoice-container {
           width: 100% !important;
           max-width: 794px !important;
-          min-height: 1123px !important;
+          max-height: 1123px !important;
           margin: 0 auto !important;
           transform: none !important;
           box-shadow: none !important;

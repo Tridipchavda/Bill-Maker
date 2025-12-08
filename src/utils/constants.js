@@ -8,5 +8,6 @@ export const Bank = {
     holerName: "Maa Creation",
     IFSC: "IBKL0000009",
     accountNo: "0009102000084075",
-    bankName: "IDBI Bank"
+    name: "IDBI Bank",
+    branch: "C. G. Road, Ahmedabad"
 }
